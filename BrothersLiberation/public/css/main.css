@@ -1,0 +1,26 @@
+.navbarcustom{
+    background-color: #5c5455 !important;
+    font-size: 20px;
+    list-style-type:none;
+    padding: 0;
+    padding-left: 10px;
+}
+#BOllogo{
+    margin: 0;
+    height: 90px;
+    width: 75px;
+}
+
+.textcolor{
+    color: white !important;
+
+}
+body{
+    background-color: #ebe4e5;
+}
+
+.lid{
+    background-color: #5c5455;
+    color: white;
+    border-radius: 10px;
+}

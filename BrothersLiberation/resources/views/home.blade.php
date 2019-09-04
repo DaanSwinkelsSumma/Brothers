@@ -14,9 +14,22 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welkom
+                </div>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    
+                    <a href="/nieuweleden">
+                        <input type="submit" class="btn btn-secondary" value="Voeg nieuwe leden toe">
+                        
+                    </a>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
