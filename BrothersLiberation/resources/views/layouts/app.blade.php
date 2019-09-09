@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -41,11 +42,11 @@
                   <li class="nav-item">
                       <a style="color:white" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   </li>
-                  @if (Route::has('register'))
+                  {{-- @if (Route::has('register'))
                       <li class="nav-item">
                           <a style="color:white" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                       </li>
-                  @endif
+                  @endif --}}
               @else
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle textcolor" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,9 +72,14 @@
                 </div>
               </nav>
 
-        <main class="py-4">
+        <main class="py-4" id="page-content">
             @yield('content')
         </main>
     </div>
+    {{-- <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+              <small>Copyright &copy; Your Website</small>
+            </div>
+          </footer> --}}
 </body>
 </html>

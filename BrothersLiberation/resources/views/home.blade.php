@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     
-                    <a href="/nieuweleden">
+                    <a href="/register">
                         <input type="submit" class="btn btn-secondary" value="Voeg nieuwe leden toe">
                         
                     </a>

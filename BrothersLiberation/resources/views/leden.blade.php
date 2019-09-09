@@ -5,7 +5,6 @@
     <div class="row">
         <div class="col">
             <h3>Leden</h3>
-
         </div>
     </div>
     @foreach ($leden as $lid)

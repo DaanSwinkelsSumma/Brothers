@@ -12,4 +12,9 @@ class ledencontroller extends Controller
         $leden = User::all();
         return view('leden', compact('leden'));
     }
+
+    public function nieuwlidpage()
+    {
+        return view('newuser');
+    }
 }
