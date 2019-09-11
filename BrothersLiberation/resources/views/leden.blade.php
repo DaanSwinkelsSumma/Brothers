@@ -7,6 +7,18 @@
             <h3>Leden</h3>
         </div>
     </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h5>Naam:</h5>
+        </div>
+        <div class="col">
+            <h5>Bijnaam</h5>
+        </div>
+        <div class="col">
+            <h5>Email:</h5>
+        </div>
+    </div>
     @foreach ($leden as $lid)
         <a href="/lid/{{ $lid->id }}">
             <div class="row align lid">
