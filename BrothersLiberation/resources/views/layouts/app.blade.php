@@ -35,7 +35,10 @@
                       <a class="nav-link textcolor" href="/leden ">Leden</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link textcolor" href="#">Link</a>
+                        <a class="nav-link textcolor" href="/galerij">Galerij</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/webshop">Webshop</a>
                     </li>
                   </ul>
                   @guest
