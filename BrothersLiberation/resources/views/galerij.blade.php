@@ -16,7 +16,9 @@
                     <img src="{{ asset($foto->fotoname) }}" alt="{{$foto->fotoid}}" height="200" width="350" onerror=this.src="{{ url('/img/img-placeholder.png') }}">
                 </div>
                 <div class="col">
-                    <h3>Galerij</h3>
+                    <h3>Omschrijving</h3>
+                    <p>{{$foto->Omschrijving}}</p>
+
                 </div>
                 <div class="col"></div>
             </div>

@@ -21,3 +21,7 @@ Route::get('/webshop', 'webshopcontroller@webshoppage');
 
 //galerij
 Route::get('/galerij', 'galerijcontroller@galerij');
+Route::get('/galerij/{foto}', 'galerijcontroller@fotodetail');
+Route::get('/comments/{comment}', 'galerijcontroller@comment');
+
+

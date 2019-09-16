@@ -30,3 +30,14 @@ body{
 .imagesalign{
     text-align-last: center;
 }
+
+.commentlink{
+
+    color: black;
+}
+
+.comment{
+    border-style: double;
+    border-radius: 10px;
+    border-color: #5c5455;
+}
