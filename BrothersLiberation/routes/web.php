@@ -23,5 +23,9 @@ Route::get('/webshop', 'webshopcontroller@webshoppage');
 Route::get('/galerij', 'galerijcontroller@galerij');
 Route::get('/galerij/{foto}', 'galerijcontroller@fotodetail');
 Route::get('/comments/{comment}', 'galerijcontroller@comment');
+Route::get('/newcomment/{foto}', 'galerijcontroller@newcommentpage');
+Route::post('/addcomment/{foto}', 'galerijcontroller@addcomment');
+
+
 
 

@@ -19,9 +19,15 @@
             <h3>Comments:</h3>
         </div>
         <div class="col" style="text-align:right">
-            <a href="/newcomment/{{$foto->fotoid}}">
-                <button class="btn btn-secondary">Nieuwe comment</button>
-            </a>
+            @if($user = Auth::user())
+                <a href="/newcomment/{{$foto->fotoid}}">
+                    <button class="btn btn-secondary">Nieuwe comment</button>
+                </a>
+            @else
+                <a href="/login">
+                    <button class="btn btn-secondary">Nieuwe comment</button>
+                </a>
+            @endif
         </div>
     </div>
     <br>
@@ -30,17 +36,15 @@
             @foreach ($comments as $comment)
                 @if($user = Auth::user())
                     <a href="/comments/{{ $comment->commentid }}" class="commentlink">
-                        <div class="row align comment">
-                            <div class="col">{{ $comment->comment }}</div>
-                            <div class="col">{{ $comment->fotoid }}</div>
-                            <div class="col">{{ $comment->userid }}</div>
+                        <div class="row align comment"> 
+                            <div class="col"><p>{{ $comment->username }}</p></div>
+                            <div class="col-10">{{ $comment->comment }}</div>
                         </div>
                     </a>
                 @else
-                    <div class="row align lid">
-                        <div class="col">{{ $comment->comment }}</div>
-                        <div class="col">{{ $comment->fotoid }}</div>
-                        <div class="col">{{ $comment->userid }}</div>
+                    <div class="row align comment">
+                        <div class="col"><p>{{ $comment->username }}</></div>
+                        <div class="col-10">{{ $comment->comment }}</div>
                     </div>
                 @endif
                 <br>
