@@ -13,7 +13,7 @@
         <div class="col">
             <form action="/updatecomment" method="post">
                 {{ csrf_field() }}
-                <input value="{{$comment->comment}}"/>
+                <textarea type="text" name="comment" class="form-control"  rows="8" cols="10">{{$comment->comment}}</textarea><br>
             </form>
         </div>
     </div>
