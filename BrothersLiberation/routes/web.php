@@ -17,6 +17,8 @@ Route::get('/nieuwlid', 'ledencontroller@nieuwlidpage');
 Route::post('/adduser', 'ledencontroller@store');
 
 //webshop
+Route::get('/webshop_on', 'webshopcontroller@webshop_on');
+Route::get('/webshop_off', 'webshopcontroller@webshop_off');
 Route::get('/webshop', 'webshopcontroller@webshoppage');
 
 

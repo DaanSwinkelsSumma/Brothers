@@ -2,12 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h3>Leden</h3>
-        </div>
-    </div>
-    <br>
+    <br><br>
     <div class="row">
         <div class="col">
             <h5>Naam:</h5>

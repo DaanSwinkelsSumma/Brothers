@@ -1,5 +1,5 @@
 .navbarcustom{
-    background-color: #3a3838 !important;
+    background-color: #222121 !important;
     font-size: 20px;
     list-style-type:none;
     padding: 0;
@@ -16,16 +16,17 @@
 
 }
 body{
-    background-color: #ebe4e5 !important;
     max-height: 100%;
     min-height: 100%; 
     margin: 0;
-
+    overflow-x: hidden; 
+    color: white !important;
+    background-color: #3a3838 !important;
 }
 
 
 .lid{
-    background-color: #ffffff;
+    background-color: #222121;
     color: white;
     border-radius: 10px;
 }
@@ -42,11 +43,14 @@ body{
 .comment{
     border-style: double;
     border-radius: 10px;
-    border-color: #5c5455;
+    border-color: #222121;
+    color: white;
 }
 
 .pt-4, .py-4 {
     padding-top: 0rem!important;
+    padding-bottom: 0rem!important;
+
 }
 
 .bol {
@@ -67,4 +71,26 @@ body{
 .boltext{
     margin-top: 250px;
     text-align: center;
+}
+
+.boloverons{
+    background-color: #3a3838;
+    color: white;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#hrline{
+    background-color: #222121;
+    height: 15px;
+  
+}
+
+.rightfix{
+    padding: 0 !important;
+}
+
+.homebody{
+    background-color: #222121;
+    color: white;
 }
