@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Welkom
+                    <h5>Welkom</h5>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -27,6 +27,14 @@
                         <input type="submit" class="btn btn-secondary" value="Voeg nieuwe leden toe">
                         
                     </a>
+                    <br>
+                    <br>
+                    <h5>Webshop </h5>
+                    <a href="/nieuwlid">
+                        <input type="submit" class="btn btn-secondary" value="Voeg nieuwe leden toe">
+                        
+                    </a>
+                    {{-- Webshop aan en uit zetten --}}
                 </div>
             </div>
             

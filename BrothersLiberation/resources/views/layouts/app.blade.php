@@ -37,15 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link textcolor" href="/galerij">Galerij</a>
                     </li>
-                    @if ({{$webshop->status == 1}})
-                        <li class="nav-item">
-                            <a class="nav-link textcolor" href="/webshop">Aan</a>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link textcolor" href="/webshop">Uit</a>
-                        </li>
-                    @endif
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/webshop">Webshop</a>
+                    </li>
 
                   </ul>
                   @guest
