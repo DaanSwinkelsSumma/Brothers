@@ -15,6 +15,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -76,14 +79,36 @@
                 </div>
               </nav>
 
-        <main class="py-4" id="page-content">
+        <main class="py-4" id="page-content" style="  position: relative; min-height: 100vh;">
             @yield('content')
-        </main>
-    </div>
-    {{-- <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-            <div class="container text-center">
-              <small>Copyright &copy; Your Website</small>
+            <!-- Footer -->
+            <br>
+            <footer class="page-footer font-small special-color-dark pt-4">
+            <br><br>
+            <!-- Footer Elements -->
+            <div class="container-fluid" style="padding:0;">
+                <div id="hrline"></div>  
+                <br>
+
+              <!-- Social buttons -->
+              <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/brothersofliberation/" class="btn-floating btn-fb mx-1">
+                      <img src="{{ asset('img/instagram.png') }}" class="img-fluid" id="insta" height="50px" width="50px">
+                    </a>
+                </li>
+              </ul>
+
             </div>
-          </footer> --}}
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
+            <!-- Copyright -->
+
+          </footer>
+          <!-- Footer -->
+        </main>
+        
+    </div>
+
 </body>
 </html>

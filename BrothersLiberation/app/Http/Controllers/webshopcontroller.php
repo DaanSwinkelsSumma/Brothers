@@ -31,8 +31,7 @@ class webshopcontroller extends Controller
 
     public function webshop_off()
     {
-
-        $status = Webshopstatus::find('Aan');
+        $status = Webshopstatus::find(1);
         $status->status = 'Uit';
         $status->save();
 
