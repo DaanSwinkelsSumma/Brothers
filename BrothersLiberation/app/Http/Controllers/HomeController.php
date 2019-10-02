@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $status = DB::table('webshopstatus')->select('status')->get();
+        $status = DB::table('webshopstatus')->select('status')->first();
         return view('home', compact('status'));
     }
 

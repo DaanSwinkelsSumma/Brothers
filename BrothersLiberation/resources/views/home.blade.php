@@ -33,7 +33,7 @@
                     <br>
                     {{-- Webshop aan en uit zetten --}}
                     <h5>Webshop </h5>
-                    @if ($status == 'Aan')
+                    @if ($status->status == 1)
                         <a href="/webshop_off">
                             <input type="submit" class="btn btn-danger" value="Zet webshop uit">
                         </a>
