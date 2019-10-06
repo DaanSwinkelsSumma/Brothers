@@ -28,7 +28,7 @@ class webshopcontroller extends Controller
     {   
         // $status = DB::table('webshopstatus')->select('status')->first();
         // dd($status);
-        $status = DB::table('webshopstatus')->first();
+        $status = Webshopstatus::where('id', 1)->first();
         $status->status = 1;
         $status->save();
 
@@ -37,11 +37,8 @@ class webshopcontroller extends Controller
 
     public function webshop_off()
     {
-        // $status = Webshopstatus::all();
-        // $status = DB::table('webshopstatus')->select('status')->get();
-        $status = Webshopstatus::pluck('status');
-        dd($status);
-        $status->status = 0;
+        $status = Webshopstatus::where('id', 1)->first();
+        $status->status = 0;    
         $status->save();
 
         return redirect('/');

@@ -108,5 +108,7 @@ footer {
 .product{
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: #222121;
+    color: white;
 }
 

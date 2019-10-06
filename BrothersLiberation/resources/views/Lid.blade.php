@@ -17,7 +17,7 @@
             <p>{{$user->Omschrijving}}</p>
         </div>
         <div class="col">
-            
+            <a href="/editmember/{{$user->id}}"><button class="btn btn-primary">Edit member</button> </a>
         </div>
     </div>
 </div>

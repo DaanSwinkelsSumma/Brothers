@@ -24,6 +24,23 @@ class ledencontroller extends Controller
         return view('lid', compact('user'));
     }
 
+    public function edit(User $user)
+    {
+        return view('editmember', compact('user'));
+    }
+
+    public function update(User $user, Request $request)
+    {
+        $user->name = Input::get('naam');
+        $user->email = Input::get('email');
+        $user->Bijnamen = Input::get('bijnaam');
+        $user->Omschrijving = $request->omschrijving;
+
+        $user->save();
+
+        return redirect('/');
+    }
+
     public function store()
     {
         $user = new User();
