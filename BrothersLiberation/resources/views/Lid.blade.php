@@ -17,6 +17,11 @@
             <p>{{$user->Omschrijving}}</p>
         </div>
         <div class="col">
+            <img src="{{$user->userimage}}" onerror=this.src="{{ url('/img/img-placeholder.png') }}" height="200px" width="300px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <a href="/editmember/{{$user->id}}"><button class="btn btn-primary">Edit member</button> </a>
         </div>
     </div>

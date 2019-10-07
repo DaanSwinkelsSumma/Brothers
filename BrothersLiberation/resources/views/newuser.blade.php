@@ -16,6 +16,11 @@
             <form action="/adduser" method="POST">
                 @method('POST')
                 {{ csrf_field() }}
+                <img aria-label="Product foto" id="imgShop" src="" onerror=this.src="{{ url('img/img-placeholder.png') }}" class="img-fluid" name="imagelink">
+                <br><br>
+                <input aria-label="Product foto toevoegen" type="file" name="imagelink" onchange="previewFileShop()">
+                <br>
+                <br>
                 <label>Gebruikersnaam:</label>
                 <input type="text" name="name" class="form-control" required>
                 <label>Bijnaam:</label>
