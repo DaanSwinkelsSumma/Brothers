@@ -9,6 +9,7 @@ Route::get('/', 'HomeController@main');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/agenda', 'HomeController@agenda');
 
 //leden
 Route::get('/leden', 'ledencontroller@leden');
@@ -34,6 +35,8 @@ Route::get('/galerij/{foto}', 'galerijcontroller@fotodetail');
 Route::get('/comments/{comment}', 'galerijcontroller@comment');
 Route::get('/newcomment/{foto}', 'galerijcontroller@newcommentpage');
 Route::post('/addcomment/{foto}', 'galerijcontroller@addcomment');
+
+
 
 
 

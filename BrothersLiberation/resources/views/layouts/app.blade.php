@@ -91,22 +91,38 @@
             <br><br>
             <!-- Footer Elements -->
             <div class="container-fluid" style="padding:0;">
-                <div id="hrline"></div>  
-                <br>
+              <div id="hrline"></div>  
+              <br>
+              <div class="row">
+                <div class="col" style="margin-left:15px"> 
+                    <h5>E-mail: lorem@lorem.com</h5>
+                    <h5>Telefoonnummer: 123456789</h5>
+                </div>
+                <div class="col">
 
-              <!-- Social buttons -->
-              <ul class="list-unstyled list-inline text-center">
-                <li class="list-inline-item">
-                  <a href="https://www.instagram.com/brothersofliberation/" class="btn-floating btn-fb mx-1">
-                      <img src="{{ asset('img/instagram.png') }}" class="img-fluid" id="insta" height="50px" width="50px">
-                    </a>
-                </li>
-              </ul>
+                  <!-- Social buttons -->
+                  <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                      <a href="https://www.instagram.com/brothersofliberation/" class="btn-floating btn-fb mx-1">
+                          <img src="{{ asset('img/instagram.png') }}" class="img-fluid" id="insta" height="50px" width="50px">
+                        </a>
+                    </li>
+                  </ul>
+                  <!-- Copyright -->
+                  <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
+                  <!-- Copyright -->
+
+                </div>
+                <div class="col"> 
+
+    
+                  </div>
+              </div>
+
+
 
             </div>
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
-            <!-- Copyright -->
+
 
           </footer>
           <!-- Footer -->
