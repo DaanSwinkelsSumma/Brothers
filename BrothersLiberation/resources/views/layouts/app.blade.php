@@ -41,9 +41,13 @@
                         <a class="nav-link textcolor" href="/galerij">Galerij</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link textcolor" href="/webshop">Webshop</a>
+                        <a class="nav-link textcolor" href="/agenda">Agenda</a>
                     </li>
-
+                    @if(getenv('WEBSHOP_STATUS') == 1)
+                      <li class="nav-item">
+                          <a class="nav-link textcolor" href="/webshop">Webshop</a>
+                      </li>
+                    @endif
                   </ul>
                   @guest
                   <li class="nav-item">

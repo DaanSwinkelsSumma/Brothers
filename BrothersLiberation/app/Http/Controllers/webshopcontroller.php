@@ -13,26 +13,29 @@ class webshopcontroller extends Controller
     //
     public function webshoppage()
     {
-        // $status = Webshopstatus::pluck('status');
         $status = DB::table('webshopstatus')->select('status')->first();
         if ($status->status == 1) {
             $products = Product::all();
-            return view('webshop', compact('products'));
+            $cats = DB::table('webshop')->select('productcategorie')->distinct()->get();
+            return view('webshop', compact('products', 'cats'));
         } else {
             return view('404webshop');
         }
-    
     }
 
     public function webshop_on()
     {   
-        // $status = DB::table('webshopstatus')->select('status')->first();
-        // dd($status);
         $status = Webshopstatus::where('id', 1)->first();
         $status->status = 1;
         $status->save();
 
-        return redirect('/');
+        file_put_contents(app()->environmentFilePath(), str_replace(
+            'WEBSHOP_STATUS' . '=' . '0',
+            'WEBSHOP_STATUS' . '=' . '1',
+            file_get_contents(app()->environmentFilePath())
+        ));
+
+        return redirect('/home');
     }
 
     public function webshop_off()
@@ -41,6 +44,17 @@ class webshopcontroller extends Controller
         $status->status = 0;    
         $status->save();
 
-        return redirect('/');
+        file_put_contents(app()->environmentFilePath(), str_replace(
+            'WEBSHOP_STATUS' . '=' . '1',
+            'WEBSHOP_STATUS' . '=' . '0',
+            file_get_contents(app()->environmentFilePath())
+        ));
+
+        return redirect('/home');
+    }
+
+    public function productdetail(Product $product)
+    {
+        return view('product', compact('product'));
     }
 }

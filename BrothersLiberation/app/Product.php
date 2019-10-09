@@ -9,5 +9,5 @@ class Product extends Model
     protected $table = 'webshop';
     protected $primaryKey = 'productid';
     public $timestamps = false;
-    protected $fillable = ['productnaam', 'productomschrijving', 'productcategorie', 'productprijs'];
+    protected $fillable = ['productnaam', 'productomschrijving', 'productcategorie', 'productprijs', 'productimage'];
 }

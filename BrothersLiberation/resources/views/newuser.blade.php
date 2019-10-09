@@ -18,7 +18,7 @@
                 {{ csrf_field() }}
                 <img aria-label="Product foto" id="imgShop" src="" onerror=this.src="{{ url('img/img-placeholder.png') }}" class="img-fluid" name="imagelink">
                 <br><br>
-                <input aria-label="Product foto toevoegen" type="file" name="imagelink" onchange="previewFileShop()">
+                <input aria-label="Product foto toevoegen" type="file" name="image" onchange="previewFileShop()">
                 <br>
                 <br>
                 <label>Gebruikersnaam:</label>
