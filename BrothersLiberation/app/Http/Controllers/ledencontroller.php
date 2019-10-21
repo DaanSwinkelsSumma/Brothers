@@ -5,10 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Input;
+use App\Webshopstatus;
+use View;
+
 
 
 class ledencontroller extends Controller
 {
+    public function __construct()
+    {
+        $status = Webshopstatus::where('id', 1)->first();
+        View::share('status', $status);
+    }
+
     public function leden()
     {
         $leden = User::all();

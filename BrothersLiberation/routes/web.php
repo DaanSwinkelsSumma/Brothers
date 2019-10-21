@@ -26,6 +26,8 @@ Route::get('/webshop_on', 'webshopcontroller@webshop_on');
 Route::get('/webshop_off', 'webshopcontroller@webshop_off');
 Route::get('/webshop', 'webshopcontroller@webshoppage');
 Route::get('/product/{product}', 'webshopcontroller@productdetail');
+Route::get('/order/{product}', 'webshopcontroller@order');
+Route::get('/webshop/filter/{filter}', 'webshopcontroller@filter');
 
 
 

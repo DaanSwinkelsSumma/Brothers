@@ -43,7 +43,8 @@
                     <li class="nav-item">
                         <a class="nav-link textcolor" href="/agenda">Agenda</a>
                     </li>
-                    @if(getenv('WEBSHOP_STATUS') == 1)
+
+                    @if($status->status == 1)
                       <li class="nav-item">
                           <a class="nav-link textcolor" href="/webshop">Webshop</a>
                       </li>

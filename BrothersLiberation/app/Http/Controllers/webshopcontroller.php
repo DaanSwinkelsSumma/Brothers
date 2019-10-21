@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Webshopstatus;
 use App\Product;
-
+use App\Webshopstatus;
+use App\Filter;
+use View;
 
 class webshopcontroller extends Controller
 {
-    //
+    public function __construct()
+    {
+        $status = Webshopstatus::where('id', 1)->first();
+        View::share('status', $status);
+    }
+    
     public function webshoppage()
     {
         $status = DB::table('webshopstatus')->select('status')->first();
@@ -29,12 +35,6 @@ class webshopcontroller extends Controller
         $status->status = 1;
         $status->save();
 
-        file_put_contents(app()->environmentFilePath(), str_replace(
-            'WEBSHOP_STATUS' . '=' . '0',
-            'WEBSHOP_STATUS' . '=' . '1',
-            file_get_contents(app()->environmentFilePath())
-        ));
-
         return redirect('/home');
     }
 
@@ -44,17 +44,34 @@ class webshopcontroller extends Controller
         $status->status = 0;    
         $status->save();
 
-        file_put_contents(app()->environmentFilePath(), str_replace(
-            'WEBSHOP_STATUS' . '=' . '1',
-            'WEBSHOP_STATUS' . '=' . '0',
-            file_get_contents(app()->environmentFilePath())
-        ));
-
         return redirect('/home');
     }
 
     public function productdetail(Product $product)
     {
+        return view('product', compact('product'));
+    }
+
+
+    public function filter(string $filter)
+    {
+        // $prodcat = $product->productcategorie;
+        // dd($filter);
+
+        $status = DB::table('webshopstatus')->select('status')->first();
+        if ($status->status == 1) {
+            $products = Product::all()->where('productcategorie', $filter);
+            $cats = DB::table('webshop')->select('productcategorie')->distinct()->get();
+            return view('webshop', compact('products', 'cats'));
+        } else {
+            return view('404webshop');
+        }
+    }
+
+
+    public function order(Product $product)
+    {
+
         return view('product', compact('product'));
     }
 }

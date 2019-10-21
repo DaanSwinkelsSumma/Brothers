@@ -8,10 +8,18 @@ use Illuminate\Support\Facades\Input;
 use App\Foto;
 use App\Comment;
 use DB;
+use App\Webshopstatus;
+use View;
 
 
 class galerijcontroller extends Controller
 {
+    public function __construct()
+    {
+        $status = Webshopstatus::where('id', 1)->first();
+        View::share('status', $status);
+    }
+
     public function galerij()
     {
         $fotos = Foto::all();

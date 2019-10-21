@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use App\Webshopstatus;
+use View;
 
 class ForgotPasswordController extends Controller
 {
@@ -28,5 +30,7 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $status = Webshopstatus::where('id', 1)->first();
+        View::share('status', $status);
     }
 }
