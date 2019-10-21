@@ -28,6 +28,9 @@ Route::get('/webshop', 'webshopcontroller@webshoppage');
 Route::get('/product/{product}', 'webshopcontroller@productdetail');
 Route::get('/order/{product}', 'webshopcontroller@order');
 Route::get('/webshop/filter/{filter}', 'webshopcontroller@filter');
+Route::get('/newproduct', 'webshopcontroller@newproduct');
+Route::post('/storeproduct', 'webshopcontroller@storeproduct');
+Route::delete('/deleteproduct/{product}', 'webshopcontroller@delete');
 
 
 

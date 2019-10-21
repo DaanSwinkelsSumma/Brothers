@@ -67,11 +67,34 @@ class webshopcontroller extends Controller
             return view('404webshop');
         }
     }
-
-
-    public function order(Product $product)
+    
+    public function newproduct(Request $request)
     {
-
-        return view('product', compact('product'));
+        return view('newproduct');
     }
+
+    public function storeproduct(Request $request)
+    {
+        $product = new Product();
+        $product->productnaam = $request->name;
+        $product->productprijs = $request->prijs;
+        $product->productcategorie = $request->categorie;
+        $product->productomschrijving = $request->omschrijving;
+        $product->productimage = '/img/img-placeholder.png';
+        // dd($product);
+        $product->save();
+
+        return redirect('/home');
+    }
+
+    public function delete(Product $product)
+    {
+        $product->delete();
+        return redirect('/webshop');    
+    }
+
+    // public function order(Product $product)
+    // {
+    //     return view('product', compact('product'));
+    // }
 }
