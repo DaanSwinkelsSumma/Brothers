@@ -93,8 +93,8 @@ class webshopcontroller extends Controller
         return redirect('/webshop');    
     }
 
-    // public function order(Product $product)
-    // {
-    //     return view('product', compact('product'));
-    // }
+    public function order(Product $product)
+    {
+        return view('orderproduct', compact('product'));
+    }
 }

@@ -95,13 +95,14 @@
               <div id="hrline"></div>  
               <br>
               <div class="row">
-                <div class="col" style="margin-left:15px"> 
+
+                <div class="col" style="margin-left:15px;"> 
                     <h5>E-mail: lorem@lorem.com</h5>
                     <h5>Telefoonnummer: 123456789</h5>
                 </div>
-                <div class="col">
+                <div class="col"> </div>
 
-                  <!-- Social buttons -->
+                <div class="col">
                   <ul class="list-unstyled list-inline text-center">
                     <li class="list-inline-item">
                       <a href="https://www.instagram.com/brothersofliberation/" class="btn-floating btn-fb mx-1">
@@ -112,19 +113,9 @@
                   <!-- Copyright -->
                   <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
                   <!-- Copyright -->
-
                 </div>
-                <div class="col"> 
-
-    
-                  </div>
               </div>
-
-
-
             </div>
-
-
           </footer>
           <!-- Footer -->
         </main>
