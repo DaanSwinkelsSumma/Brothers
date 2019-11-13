@@ -55,9 +55,6 @@ class webshopcontroller extends Controller
 
     public function filter(string $filter)
     {
-        // $prodcat = $product->productcategorie;
-        // dd($filter);
-
         $status = DB::table('webshopstatus')->select('status')->first();
         if ($status->status == 1) {
             $products = Product::all()->where('productcategorie', $filter);
@@ -85,6 +82,25 @@ class webshopcontroller extends Controller
         $product->save();
 
         return redirect('/home');
+    }
+
+    public function update(Product $product, Request $request)
+    {
+        $product->productnaam = $request->name;
+        $product->productnaam = $request->name;
+        $product->productprijs = $request->prijs;
+        $product->productcategorie = $request->categorie;
+        $product->productomschrijving = $request->omschrijving;
+        $product->productimage = '/img/img-placeholder.png';
+
+        $product->save();
+
+        return redirect('/webshop');    
+    }
+
+    public function edit(Product $product)
+    {
+        return view('updateproduct', compact('product'));
     }
 
     public function delete(Product $product)

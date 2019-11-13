@@ -38,6 +38,12 @@
             <a href="/order/{{$product->productid}}">
                 <button class="btn btn-secondary">Bestel product</button>
             </a>
+            &nbsp;
+            @if($user = Auth::user())
+                <a href="/editproduct/{{$product->productid}}">
+                    <button class="btn btn-secondary">Product aanpassen</button>
+                </a>
+            @endif
         </div>
     </div>
 </div>

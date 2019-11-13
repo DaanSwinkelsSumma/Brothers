@@ -19,7 +19,7 @@
                 <h4>Prijs:</h4>
                 <input type="text" name="prijs" class="form-control">
                 <h4>Omschrijving:</h4>
-                <input type="text" name="omschrijving" class="form-control">
+                <textarea type="text" name="omschrijving" class="form-control"  rows="4" cols="10"></textarea><br>
             </div>
         </div>
         <br>

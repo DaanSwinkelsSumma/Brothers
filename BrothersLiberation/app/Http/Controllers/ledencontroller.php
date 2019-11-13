@@ -59,7 +59,7 @@ class ledencontroller extends Controller
         $user->Bijnamen = Input::get('Bijnamen');
         $user->Omschrijving = Input::get('Omschrijving');
         $user->password =  bcrypt(Input::get('password'));
-        $user->userimage =  Input::get('image');
+        // $user->userimage =  Input::get('image');
 
         $user->save();
 

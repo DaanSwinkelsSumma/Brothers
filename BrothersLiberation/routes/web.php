@@ -31,6 +31,8 @@ Route::get('/webshop/filter/{filter}', 'webshopcontroller@filter');
 Route::get('/newproduct', 'webshopcontroller@newproduct');
 Route::post('/storeproduct', 'webshopcontroller@storeproduct');
 Route::delete('/deleteproduct/{product}', 'webshopcontroller@delete');
+Route::get('/editproduct/{product}', 'webshopcontroller@edit');
+Route::post('/updateproduct/{product}', 'webshopcontroller@update');
 
 
 
