@@ -109,8 +109,63 @@ class webshopcontroller extends Controller
         return redirect('/webshop');    
     }
 
-    public function order(Product $product)
+
+
+    //cart
+    public function cartindex()
     {
-        return view('orderproduct', compact('product'));
+        return view('cart');
+    }
+
+    public function addtocart($id)
+    {
+        $product = Product::find($id);
+
+        if(!$product) {
+            abort(404);
+        }
+        // dd($product);
+
+        $cart = session()->get('cart');
+        
+        if(!$cart) {
+            $cart = [
+                $id => [
+                    "naam" => $product->productnaam,
+                    "prijs" => $product->productprijs,
+                    "aantal" => 1,
+                ]
+            ];
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+        }
+
+        if(isset($cart[$id])) {
+ 
+            $cart[$id]['aantal']++;
+
+            session()->put('cart', $cart);
+
+            return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+
+        }
+
+        $cart[$id] = [
+            "naam" => $product->productnaam,
+            "prijs" => $product->productprijs,
+            "aantal" => 1,
+        ];
+ 
+        session()->put('cart', $cart);
+ 
+        return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+    }
+
+    //order
+    public function order()
+    {
+        $cart = session()->get('cart');
+        dd($cart);
+        // return view('orderproduct', compact('product'));
     }
 }

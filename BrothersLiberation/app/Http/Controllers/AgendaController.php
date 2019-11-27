@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 use App\Webshopstatus;
+use App\Activiteit;
 use View;
 
-
-class HomeController extends Controller
+class AgendaController extends Controller
 {
     public function __construct()
     {
@@ -16,16 +15,14 @@ class HomeController extends Controller
         View::share('status', $status);
     }
 
-    public function index()
+    public function agendapagina()
     {
-        $status = DB::table('webshopstatus')->select('status')->first();
-        return view('home', compact('status'));
+        $activiteiten = Activiteit::all();
+        return view('agenda', compact('activiteiten'));
     }
 
-    public function main()
+    public function nieuwact()
     {
-        return view('welcome');
+        return view('nieuwact');
     }
-
-
 }

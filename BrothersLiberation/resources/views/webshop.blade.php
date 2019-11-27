@@ -5,9 +5,6 @@
     <br>
     <div class="row">
         <div class="col">
-            <h4>Filters</h4>
-        </div>
-        <div class="col" >
             <select class="form-control" onchange="window.location=this.options[this.selectedIndex].value">
                 <option disabled selected hidden>Categorieën:</option>
                 @foreach ($cats as $cat)
@@ -17,12 +14,19 @@
 
             </select>
         </div>
+        <div class="col" >
+
+        </div>
         <div class="col" style="text-align:right">
             @if($user = Auth::user())
                 <a href="/newproduct">
                     <button class="btn btn-secondary">Nieuw product</button>
                 </a>
             @endif
+            &nbsp;&nbsp;
+            <a href="/cart">
+                <img src="{{ asset('img/cart.png') }}" height="50px" width="50px" >
+            </a>
         </div>
 
     </div>

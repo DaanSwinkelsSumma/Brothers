@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <br>
-    <form action="/email" method="GET">
+    <form action="/email/{{$product->productid}}" method="GET">
         {{ csrf_field() }}
         <br>
         <div class="row">

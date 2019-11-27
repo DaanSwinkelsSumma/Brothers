@@ -35,10 +35,10 @@
     <br>
     <div class="row">
         <div class="col">
-            <a href="/order/{{$product->productid}}">
-                <button class="btn btn-secondary">Bestel product</button>
+            <a href="/addtocart/{{$product->productid}}">
+                <button class="btn btn-secondary">Toevoegen aan winkelwagen</button>
             </a>
-            &nbsp;
+            &nbsp;&nbsp;
             @if($user = Auth::user())
                 <a href="/editproduct/{{$product->productid}}">
                     <button class="btn btn-secondary">Product aanpassen</button>

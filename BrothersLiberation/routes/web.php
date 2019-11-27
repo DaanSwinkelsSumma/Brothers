@@ -9,7 +9,6 @@ Route::get('/', 'HomeController@main');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/agenda', 'HomeController@agenda');
 
 //leden
 Route::get('/leden', 'ledencontroller@leden');
@@ -46,7 +45,15 @@ Route::post('/addcomment/{foto}', 'galerijcontroller@addcomment');
 
 
 //order
-Route::get('/order/{product}', 'webshopcontroller@order');
-Route::get('/email', 'EmailController@sendEMail');
+Route::get('/order', 'webshopcontroller@order');
+Route::get('/email/{product}', 'EmailController@sendEMail');
 
+
+//agenda
+Route::get('/agenda', 'AgendaController@agendapagina');
+Route::get('/nieuweactiviteit', 'AgendaController@nieuwact');
+
+//cart
+Route::get('/cart', 'webshopcontroller@cartindex');
+Route::get('/addtocart/{product}', 'webshopcontroller@addtocart');
 
