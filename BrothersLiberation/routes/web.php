@@ -46,7 +46,7 @@ Route::post('/addcomment/{foto}', 'galerijcontroller@addcomment');
 
 //order
 Route::get('/order', 'webshopcontroller@order');
-Route::get('/email/{product}', 'EmailController@sendEMail');
+Route::get('/email', 'EmailController@sendEMail');
 
 
 //agenda

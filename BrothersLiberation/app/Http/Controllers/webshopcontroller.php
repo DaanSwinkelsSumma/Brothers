@@ -164,8 +164,8 @@ class webshopcontroller extends Controller
     //order
     public function order()
     {
-        $cart = session()->get('cart');
-        dd($cart);
-        // return view('orderproduct', compact('product'));
+        $products = session()->get('cart');
+
+        return view('orderproduct', compact('products'));
     }
 }

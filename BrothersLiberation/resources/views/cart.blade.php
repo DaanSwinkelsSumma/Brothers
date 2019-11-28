@@ -15,19 +15,18 @@
     <br>
     <div class="row">
         <div class="col">
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Productnaam</th>
-                        <th scope="col">Aantal</th>
-                        <th scope="col">Prijs</th>
-                        <th scope="col">Actie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(session('cart'))
+            @if(session('cart'))
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Productnaam</th>
+                            <th scope="col">Aantal</th>
+                            <th scope="col">Prijs</th>
+                            <th scope="col">Actie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @foreach(session('cart') as $id => $details)
-
                             <tr>
                                 <th>{{ $details['naam'] }}</th>
                                 <td>{{ $details['aantal'] }}</td>
@@ -35,11 +34,14 @@
                                 <td>X</td>
                             </tr>
                         @endforeach
-                    @endif
-                </tbody>
-            </table>
-            <br>
-            <a href="/order"><button class="btn btn-secondary">Bestellen</button></a>
+                    </tbody>
+                </table>
+                <br>
+                <a href="/order"><button class="btn btn-secondary">Bestellen</button></a>
+            @else 
+                <br>
+                <h5>Geen producten toegevoegd aan winkelwagen</h5>
+            @endif
         </div>
     </div>
 </div>
