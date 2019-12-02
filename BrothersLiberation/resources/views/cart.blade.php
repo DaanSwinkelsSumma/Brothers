@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="container">
     <br>
     <div class="row">
@@ -31,13 +32,15 @@
                                 <th>{{ $details['naam'] }}</th>
                                 <td>{{ $details['aantal'] }}</td>
                                 <td>€ {{ $details['prijs'] }}</td>
-                                <td>X</td>
+                                <td><a href="/removeitem/{{$id}}"> <img src="/img/delete.jpg" height="30px" width="30px"></a></td>
+
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <br>
-                <a href="/order"><button class="btn btn-secondary">Bestellen</button></a>
+                <a href="/order"><button class="btn btn-secondary">Bestellen</button></a> &nbsp;&nbsp;
+                <a href="/clearcart"><button class="btn btn-secondary">Winkewagen legen</button></a>
             @else 
                 <br>
                 <h5>Geen producten toegevoegd aan winkelwagen</h5>

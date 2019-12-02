@@ -137,7 +137,7 @@ class webshopcontroller extends Controller
                 ]
             ];
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+            return redirect('/webshop');    
         }
 
         if(isset($cart[$id])) {
@@ -146,7 +146,7 @@ class webshopcontroller extends Controller
 
             session()->put('cart', $cart);
 
-            return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+            return redirect('/webshop');    
 
         }
 
@@ -158,14 +158,48 @@ class webshopcontroller extends Controller
  
         session()->put('cart', $cart);
  
-        return redirect()->back()->with('success', 'Product toegevoegd aan winkelwagen!');
+        return redirect('/webshop');    
+    }
+
+    public function clearcart()
+    {
+        session()->forget('cart');
+        session()->flush();
+
+        return view('cart');
+    }
+
+    // public function removeitem($item)
+    // {
+    //     // dd($id);
+    //     session()->forget('cart', $item);
+    //     session()->save();
+    //     return redirect()->back();
+    // }
+
+    public function removeitem($id)
+    {
+        if($id) {
+ 
+            $cart = session()->get('cart');
+ 
+            if(isset($cart[$id])) {
+ 
+                unset($cart[$id]);
+ 
+                session()->put('cart', $cart);
+            }
+ 
+            return view('cart');
+        }
     }
 
     //order
     public function order()
     {
         $products = session()->get('cart');
-
         return view('orderproduct', compact('products'));
     }
+    
+
 }

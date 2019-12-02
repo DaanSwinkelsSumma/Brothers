@@ -56,4 +56,8 @@ Route::get('/nieuweactiviteit', 'AgendaController@nieuwact');
 //cart
 Route::get('/cart', 'webshopcontroller@cartindex');
 Route::get('/addtocart/{product}', 'webshopcontroller@addtocart');
+Route::get('/clearcart', 'webshopcontroller@clearcart');
+Route::get('/removeitem/{id}', 'webshopcontroller@removeitem');
+
+
 
