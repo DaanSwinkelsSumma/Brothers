@@ -7,27 +7,38 @@
         <div class="col">
         </div>
         <div class="col">
-            <h5>Gebeurtenis toevoegen</h5>
+            <h3>Gebeurtenis toevoegen</h3>
         </div>
         <div class="col" >
 
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            <form action="" method="post">
-                {{ csrf_field() }}
-                <input type="text" name="datum" class="form-control">
-
+    <form action="/storeact" method="post">
+        {{ csrf_field() }}
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-4">
+                <h5>Begin datum:</h5>
+                <input type="date" name="startdatum" class="form-control">
+                <br>
+                <h5>Eind datum:</h5>
+                <input type="date" name="einddatum" class="form-control">
+                <br>
+                <h5>Begin tijd:</h5>
+                <input type="time" name="starttijd" class="form-control">
+                <br>
+                <h5>Eind tijd:</h5>
+                <input type="time" name="eindtijd" class="form-control">
+            </div>
+            <div class="col-1"></div>
+            <div class="col-4">
+                <h5>Omschrijving:</h5>
                 <textarea type="text" name="omschrijving" class="form-control"  rows="8" cols="10"></textarea><br>
                 <input type="submit" value="Plaatsen" class="btn btn-secondary">
-            </form>
+            </div>
+            <div class="col"></div>
         </div>
-        <div class="col"></div>
-    </div>
-    
-    
+    </form>
 </div>
 @endsection

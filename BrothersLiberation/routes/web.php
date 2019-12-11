@@ -52,6 +52,13 @@ Route::get('/email', 'EmailController@sendEMail');
 //agenda
 Route::get('/agenda', 'AgendaController@agendapagina');
 Route::get('/nieuweactiviteit', 'AgendaController@nieuwact');
+Route::post('/storeact', 'AgendaController@storeact');
+Route::get('/delete/act/{activiteit}', 'AgendaController@delact');
+Route::get('/agenda/filter/{maand}', 'AgendaController@maand');
+Route::get('/agenda/date', 'AgendaController@date');
+
+
+
 
 //cart
 Route::get('/cart', 'webshopcontroller@cartindex');

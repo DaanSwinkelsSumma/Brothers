@@ -118,3 +118,11 @@ footer {
     margin-bottom: 20px !important;
 }
 
+
+.filters{
+    border-radius: 15px;
+    background-color: #222121;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}

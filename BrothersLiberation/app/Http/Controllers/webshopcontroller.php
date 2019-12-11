@@ -168,15 +168,7 @@ class webshopcontroller extends Controller
 
         return view('cart');
     }
-
-    // public function removeitem($item)
-    // {
-    //     // dd($id);
-    //     session()->forget('cart', $item);
-    //     session()->save();
-    //     return redirect()->back();
-    // }
-
+    
     public function removeitem($id)
     {
         if($id) {

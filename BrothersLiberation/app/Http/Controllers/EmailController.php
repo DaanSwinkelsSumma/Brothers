@@ -37,6 +37,8 @@ class EmailController extends Controller
         });
 
         // return redirect()->action('webshopcontroller@webshoppage');
+        session()->forget('cart');
+
         return redirect('/webshop');   
 
         
